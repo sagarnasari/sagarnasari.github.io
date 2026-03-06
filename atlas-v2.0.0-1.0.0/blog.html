@@ -1,0 +1,50 @@
+<div id="blog-list" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <!-- Posts will be inserted here dynamically -->
+</div>
+
+<script>
+  fetch('data/posts.json')
+    .then(response => response.json())
+    .then(posts => {
+      const blogList = document.getElementById('blog-list');
+      posts.forEach(post => {
+        const postCard = document.createElement('div');
+        postCard.className = 'border p-4 hover:shadow-lg transition-shadow';
+        postCard.innerHTML = `
+          <span class="inline-block bg-green-light px-2 py-1 rounded text-sm font-body text-green">${post.category}</span>
+          <h4 class="font-body font-semibold text-primary dark:text-white mt-2">${post.title}</h4>
+          <p class="font-body text-primary dark:text-white mt-2">${post.summary}</p>
+          <div class="mt-2 font-body text-sm text-secondary dark:text-secondary">
+            ${post.date} • ${post.readTime}
+          </div>
+          <a href="${post.link}" class="mt-3 inline-block text-green font-body font-semibold">Read More →</a>
+        `;
+        blogList.appendChild(postCard);
+      });
+    });
+</script>
+<div id="blog-list" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <!-- Posts will be loaded here -->
+</div>
+
+<script>
+  fetch('data/posts.json')
+    .then(res => res.json())
+    .then(posts => {
+      const blogList = document.getElementById('blog-list');
+      posts.forEach(post => {
+        const card = document.createElement('div');
+        card.className = 'border p-4 hover:shadow-lg transition-shadow';
+        card.innerHTML = `
+          <span class="inline-block bg-green-light px-2 py-1 rounded text-sm font-body text-green">${post.category}</span>
+          <h4 class="font-body font-semibold text-primary dark:text-white mt-2">${post.title}</h4>
+          <p class="font-body text-primary dark:text-white mt-2">${post.summary}</p>
+          <div class="mt-2 font-body text-sm text-secondary dark:text-secondary">
+            ${post.date} • ${post.readTime}
+          </div>
+          <a href="${post.link}" class="mt-3 inline-block text-green font-body font-semibold">Read More →</a>
+        `;
+        blogList.appendChild(card);
+      });
+    });
+</script>
