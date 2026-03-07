@@ -8,19 +8,11 @@
     "readTime": "4 min read"
   },
   {
-    "title": "Using Git Submodules for Private Content",
-    "category": "DevOps",
-    "summary": "A guide to manage private content with Git submodules in your repositories.",
-    "link": "posts/git-submodules.html",
-    "date": "July 19, 2020",
-    "readTime": "4 min read"
-  },
-  {
-    "title": "New Post Title",
-    "category": "Category Name",
-    "summary": "Short summary of your post for blog listing.",
-    "link": "posts/new-post.html",
-    "date": "March 6, 2026",
-    "readTime": "4 min read"
+    "title": "How I Deployed Node.js App on AWS EC2",
+    "category": "Cloud",
+    "summary": "Step-by-step guide on deploying a Node.js application on AWS EC2.",
+    "link": "posts/ec2-nodejs.html",
+    "date": "March 4, 2026",
+    "readTime": "5 min read"
   }
 ]
