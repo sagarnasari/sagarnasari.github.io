@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deploying a Website using GitHub Actions CI/CD</title>
+<link rel="stylesheet" href="assets/styles/main.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Deploying a Website using GitHub Actions CI/CD</h1>
+
+<p>
+Continuous Integration and Continuous Deployment (CI/CD) is an important practice in DevOps.
+It allows developers to automatically build, test, and deploy applications whenever code changes are pushed to a repository.
+</p>
+
+<h2>What is GitHub Actions?</h2>
+
+<p>
+GitHub Actions is a CI/CD tool provided by <strong>GitHub</strong> that allows developers to automate workflows directly from their repositories.
+Using GitHub Actions, we can automatically deploy our website whenever we push new code.
+</p>
+
+<h2>Project Architecture</h2>
+
+<pre>
+Developer → GitHub Repository → GitHub Actions Workflow → Deployment Server
+</pre>
+
+<p>
+Whenever the developer pushes code to the GitHub repository, the workflow automatically runs and deploys the updated website.
+</p>
+
+<h2>Step 1: Create a GitHub Repository</h2>
+
+<p>
+Create a new repository and upload your website files such as:
+</p>
+
+<pre>
+index.html
+style.css
+script.js
+</pre>
+
+<h2>Step 2: Create GitHub Actions Workflow</h2>
+
+<p>
+Inside your repository create a folder:
+</p>
+
+<pre>
+.github/workflows
+</pre>
+
+<p>
+Then create a file called:
+</p>
+
+<pre>
+deploy.yml
+</pre>
+
+<h2>Example Workflow</h2>
+
+<pre>
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Deploy Website
+        run: echo "Deploying website..."
+</pre>
+
+<h2>Benefits of CI/CD</h2>
+
+<ul>
+<li>Automated deployments</li>
+<li>Faster development cycle</li>
+<li>Reduced human errors</li>
+<li>Continuous integration of new features</li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>
+Using GitHub Actions we can build powerful CI/CD pipelines to automate application deployment.
+This is an essential skill for DevOps and Cloud Engineers.
+</p>
+
+</div>
+
+</body>
+</html>
