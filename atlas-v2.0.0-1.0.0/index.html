@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -216,7 +216,33 @@ Personal portfolio website hosted using GitHub Pages.
 </div>
 
 </div>
+<script>
+function global() {
+  return {
+    isDarkMode: false,
+
+    themeInit() {
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+        this.isDarkMode = true;
+      }
+    },
+
+    themeSwitch() {
+      this.isDarkMode = !this.isDarkMode;
+
+      if (this.isDarkMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+    }
+  }
+}
+</script>
 
 </body>
 </html>
-```
+
